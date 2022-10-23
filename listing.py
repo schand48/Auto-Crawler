@@ -14,7 +14,7 @@ class Listing:
         self.__price = 0
         self.__description = ""
         self.__listingURL = ""
-		self.__listingDate = ""
+	self.__listingDate = ""
  
     # Getters and Setters
     def get_year(self):
