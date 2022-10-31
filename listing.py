@@ -1,33 +1,55 @@
-# listing.py
+#Author:Sumi
+#listing.py
 # Class representing a Listing
 
-import datetime #not used yet. will use for year and listingDate
+#import datetime #not used yet. will use for year and listingDate
 
 class Listing:
 
     # Attributes of a Listing
     # All variables are private
     def __init__(self):
+        self.__name = ""
+        self.__mileage = 0
+        self.__dealer_name = ""
+        self.__price = 0
         self.__year = 0
         self.__make = ""
         self.__model = ""
-        self.__price = 0
         self.__description = ""
         self.__listingURL = ""
-	self.__listingDate = ""
- 
+        self.__listingDate = ""
+
     # Getters and Setters
+    def get_name(self):
+        return self.__name
+
+    def set_name(self, name):
+        self.__name = name
+
+    def get_mileage(self):
+        return self.__mileage
+
+    def set_mileage(self, mileage):
+        self.__mileage = mileage
+
+    def get_dealer_name(self):
+        return self.__dealer_name
+
+    def set_dealer_name(self, dealer_name):
+        self.__dealer_name = dealer_name
+
     def get_year(self):
         return self.__year
 
     def set_year(self, year):
-        assert year > 0  
+        assert year > 0
         self.__year = year
 
     def get_make(self):
         return self.__make
 
-    def set_make(self, make)
+    def set_make(self, make):
         self.__make = make
 
     def get_model(self):

@@ -1,3 +1,5 @@
+#Created by Richard
+#Updated by Sumi
 """
 Django settings for CrawlerSite project.
 
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'CrawlerSite',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +57,7 @@ ROOT_URLCONF = 'CrawlerSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['CrawlerSite/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

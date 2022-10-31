@@ -1,7 +1,3 @@
-# Auto Crawler
-I think "Wheelfinder" is a better name
-+ gaming
-Test
 
 To run the development server and see the django page:
 1. Clone the repository
