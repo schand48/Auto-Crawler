@@ -14,12 +14,12 @@ def car_detail(request,id):
     t = types.get(id=car.type.id)
     return render(request, 'car_detail.html', {'car': car, 'type': t.ctype})
 
-#class HomePageView(TemplateView):
-#    template_name = 'home.html'
+class HomePageView(TemplateView):
+    template_name = 'home.html'
 
-#class SearchResultsView(ListView):
-#    model = Car
-#    template_name = 'search_results.html'
+class SearchResultsView(ListView):
+    model = Car
+    template_name = 'search_results.html'
 
 #def index(request):
 #    return HttpResponse("This is the start of the Auto Crawler project site.")
