@@ -1,4 +1,4 @@
-#Created by Sumi
+#Author: Sumi
 import csv
 from car import Car
 
@@ -7,7 +7,7 @@ class Search:
         self.__car_listings = []
 
     def create_database(self, car_listings_page4):
-        with open("car_listings_page4.csv", "r") as csvfile:
+        with open("cars/static/car_listings_page4.csv", "r") as csvfile:
           csvreader = csv.reader(csvfile)
           for line in csvreader:
 

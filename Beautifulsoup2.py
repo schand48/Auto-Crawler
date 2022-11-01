@@ -52,4 +52,4 @@ for i in range (1,13):
 
 #Using Pandas to create a dictionary and import to .csv file
 Car.car_listings = pd.DataFrame({'Name': name, 'Mileage':mileage, 'Price': price, 'Dealer Name':dealer_name,'Link': source})
-Car.car_listings.to_csv('car_listings_page4.csv') #Sumi: Updated to lighter csv file
+Car.car_listings.to_csv('cars/static/car_listings_page4.csv') #Sumi: set a location and updated to lighter csv file
