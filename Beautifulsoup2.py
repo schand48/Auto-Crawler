@@ -4,7 +4,8 @@ from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 import urllib.parse
-
+from car import Car
+import csv
 name = []
 price = []
 mileage = []
@@ -49,6 +50,6 @@ for i in range (1,13):
             except:
                 source.append('n/a')
 
-#Using Pandas to create a dictionary and import to Excel
-car_listings = pd.DataFrame({'Name': name, 'Mileage':mileage, 'Price': price, 'Dealer Name':dealer_name,'Link': source})
-car_listings.to_excel('car_listings_page4.xlsx')
+#Using Pandas to create a dictionary and import to .csv file
+Car.car_listings = pd.DataFrame({'Name': name, 'Mileage':mileage, 'Price': price, 'Dealer Name':dealer_name,'Link': source})
+Car.car_listings.to_csv('car_listings_page4.csv') #Sumi: Updated to lighter csv file

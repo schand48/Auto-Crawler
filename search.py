@@ -26,7 +26,7 @@ class Search:
         return None
 
 
-#testing search
+#testing search class
 if __name__ == "__main__":
     cDatabase = Search()
     cDatabase.create_database("car_listings_page4.csv")

@@ -2,7 +2,7 @@
 To run the development server and see the django page:
 1. Clone the repository
 2. open a terminal in the folder at the level where you can see manage.py
-3. run virtual environment with `.env-env\Scripts\activate.bat`
+3. run virtual environment with `.venv\Scripts\activate.bat`
 4. run `python manage.py runserver`
 5. open browser and navigate to `http://127.0.0.1:8000/`
 
