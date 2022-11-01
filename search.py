@@ -17,3 +17,4 @@ class Search:
             car_data.set_dealer_name(line[3])
             car_data.set_listingURL(line[4])
         self.__car_listings.append(car_data)
+    
