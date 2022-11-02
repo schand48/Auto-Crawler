@@ -1,56 +1,74 @@
+#Author: Sumi
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView, ListView
-from .models import Car, Cartype
+from .models import Car
 from django.db.models import Q
 import csv
-#from car import Car
+# from car import Car
 
+# #Define function to display all cars
+# def car_list(request):
+#     car = Car.objects.all()
+#     return render(request, 'car_list.html', {'car': car })
+
+#Class for Homepage
 class HomePageView(TemplateView):
     template_name = 'home.html'
 
+#Class for Search Results
 class SearchResultsView(ListView):
     model = Car
     template_name = 'search_results.html'
 
-# Define function to display all cars
-def car_list(request):
-    car = Car.objects.all()
-    return render(request, 'car_list.html', {'car': car })
-
-# Define function to display all cars
-
-def car_list(request):
-    car = Car.objects.all()
-    return render(request, 'car_list.html', {'car': car })
-
-# Define function to display the particular car
-def car_detail(request,id):
-    car = get_object_or_404(Car, id=id)
-    types = Cartype.objects.all()
-    t = types.get(id=car.type.id)
-    return render(request, 'car_detail.html', {'car': car, 'type': t.ctype})
-
-
-# Define function to search car
+# function for searchbar to search through user query
 def search(request):
+    car_list=[]
+    with open('cars/static/car_listings_page4.csv', newline='') as csv_file:
+        reader = csv.reader(csv_file)
+        next(reader, None)  # Skip the header.
+        # Unpack row directly 
+        for number, name, mileage, price, carURL, dealer_name in reader:
+            # Convert number to floats.
+            price = float(price)
+            # create instance and append it to the list.
+            car_list.append(Car(number, name, mileage, price, carURL, dealer_name))
     results = []
     if request.method == "GET":
         query = request.GET.get('search')
         if query == '':
             query = 'None'
-        results = Car.objects.filter(Q(name__icontains=query) | Q(mileage__icontains=query) | Q(price__icontains=query) | Q(dealer_name__icontains=query) )
+        results = Car.objects.filter(Q(name__icontains=query))
     return render(request, 'search.html', {'query': query, 'results': results})
 
-def index(request):
-    car = {'name':'b', 'mileage':'c', 'price': 'd', 'dealer_name':'e','carURL': 'f'}
-    file = open("/static/car_listings_page4.csv")
-    csvreader = csv.reader(file)
-    rows = []
-    d = dict()
-    for row in csvreader:
-       rows.append(row)
-    for r in rows:
-       d.update({r[0]:r[1]})
-       print(r[0]) 
-    return render(request, 'home.html',car)
+
+# # # Define function to display the particular car
+#     def car_detail(request,id):
+#         car = get_object_or_404(Car, id=id)
+#         types = Cartype.objects.all()
+#         t = types.get(id=car.type.id)
+#         return render(request, 'car_detail.html', {'car': car, 'type': t.ctype})
+
+# # Define function to search car
+# def search(request):
+#     #form = SearchForm()
+#     results = []
+#     if request.method == "GET":
+#         query = request.GET.get('search')
+#         if query == '':
+#             query = 'None'
+#         results = Car.objects.filter(Q(name__icontains=query) | Q(mileage__icontains=query) | Q(price__icontains=query) | Q(dealer_name__icontains=query) )
+#     return render(request, 'search.html', {'query': query, 'results': results})
+
+# def index(request):
+#     car = {'name':car.name, 'mileage':car.mileage, 'price': car.price, 'dealer_name': car.dealer_name,'carURL': car.carURL}
+#     file = open("/static/car_listings_page4.csv")
+#     csvreader = csv.reader(file)
+#     rows = []
+#     d = dict()
+#     for row in csvreader:
+#        rows.append(row)
+#     for r in rows:
+#        d.update({r[0]:r[1]})
+#        print(r[0]) 
+#     return render(request, 'home.html',car)
 
