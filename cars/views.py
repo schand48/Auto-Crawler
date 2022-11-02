@@ -49,6 +49,8 @@ def index(request):
     d = dict()
     for row in csvreader:
        rows.append(row)
-
+    for r in rows:
+       d.update({r[0]:r[1]})
+       print(r[0]) 
     return render(request, 'home.html',car)
 
