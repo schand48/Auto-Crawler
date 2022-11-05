@@ -4,11 +4,13 @@ To run the development server and see the django wepage:
 3. Run virtual environment with `.venv\Scripts\activate.bat`
 4. Run `python manage.py runserver`
 5. Open browser and navigate to `http://127.0.0.1:8000/` to view webpage
-6. To deactivate virtual environment enter `decativate` into terminal
+6. CNTRL + C to close server
+7. To deactivate virtual environment enter `deacativate` into terminal
 
 To run Web-Crawler.py:
-1. Open terminal
+1. Open terminal and navigate to Auto-Crawler Directory
 2. Install and import Beautifulsoup4 with `pip install beautifulsoup4`
 2. Install and import Request lib with `pip install request`
-3. Install and report Pandas with ` pip install pandas`
-4. Run the code, `Web-Crawler.py`, there will be a .csv file created in the /static directory 
+3. Install Pandas with `pip install pandas`
+4. Install openpyxl with `pip install openpyxl`
+5. Run the code, `Web-Crawler.py`, there will be an excel .csv file created in the /cars/data directory 

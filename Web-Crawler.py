@@ -2,10 +2,9 @@
 from bs4 import BeautifulSoup   
 import requests 
 import pandas as pd
-
 import csv
-
 import urllib.parse 
+
 class Crawler:
     data = []
     root_url = 'http://www.cars.com'
@@ -32,7 +31,8 @@ class Crawler:
                 'Link': root_url+result.find('a', {'class':'vehicle-card-visited-tracking-link'}).get('href') if result.find('a', {'class':'vehicle-card-visited-tracking-link'}) else None
                 })
                 
-    #Export Data to .csv file and save in /static
+    #Export Data to excel and .csv file and save in /static
     car_listings = pd.DataFrame(data)
-    car_listings.to_excel('car_listings_page1.xlsx')
-    car_listings.to_csv('car_listings_page1.csv')
+    car_listings.to_excel('cars/data/car_listings_page1.xlsx')
+    car_listings.to_csv('cars/data/car_listings_page1.csv') #Bug: csv formatting issues
+    #car_listings.to_json('cars/data/car_listings_page1.json')

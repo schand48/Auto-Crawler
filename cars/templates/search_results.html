@@ -1,4 +1,4 @@
-<!-- templates/search_results.html -->
+<!--cars/templates/search_results.html -->
 <head>
 
   <title> Auto Crawler</title>
@@ -29,7 +29,7 @@
   <ul>
     {% for car in object_list %}
       <li>
-        {{ car.name }}, {{ car.mileage }}
+        {{ car.name }}, {{ car.mileage }}, {{ car.price }}, {{ car.dealer_name }}, {{ car.carURL }}, 
       </li>
     {% endfor %}
   </ul>

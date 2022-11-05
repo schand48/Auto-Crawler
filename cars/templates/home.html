@@ -1,4 +1,4 @@
-<!-- templates/home.html -->
+<!--cars/templates/home.html-->
 <head>
 
     <title>Auto Crawler</title>
@@ -22,16 +22,7 @@
         <form action="{% url 'search_results' %}" class="form-inline" method="get">
    </form>
 </head>
-    <body>
-    <div class="container">
-      <ul>
-         {% for car in object_list %}
-           <li>
-             {{ car.name }}, {{ car.mileage }}
-           </li>
-         {% endfor %}
-       </ul>
-</div>
+
 </div>
 </body>
 </html>

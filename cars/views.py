@@ -1,12 +1,13 @@
 #Author: Sumi
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView, ListView
-from .models import Car
+from models import Car
 from django.db.models import Q
 import csv
 # from car import Car
 
-# #Define function to display all cars
+# Used for testing
+# Defining function to display all cars
 # def car_list(request):
 #     car = Car.objects.all()
 #     return render(request, 'car_list.html', {'car': car })
@@ -14,7 +15,6 @@ import csv
 #Class for Homepage
 class HomePageView(TemplateView):
     template_name = 'home.html'
-
 #Class for Search Results
 class SearchResultsView(ListView):
     model = Car
@@ -22,16 +22,18 @@ class SearchResultsView(ListView):
 
 # function for searchbar to search through user query
 def search(request):
-    car_list=[]
-    with open('cars/static/car_listings_page4.csv', newline='') as csv_file:
-        reader = csv.reader(csv_file)
-        next(reader, None)  # Skip the header.
-        # Unpack row directly 
-        for number, name, mileage, price, carURL, dealer_name in reader:
-            # Convert number to floats.
-            price = float(price)
-            # create instance and append it to the list.
-            car_list.append(Car(number, name, mileage, price, carURL, dealer_name))
+    #load csv data
+    with open("cars/data/car_listings_page4.csv", "r") as csvfile:
+        csvreader = csv.reader(csvfile)
+        for line in csvreader:
+            _, created = Car.objects.get_or_create(
+                number=line[0],
+                name=line[1],
+                mileage=line[2],
+                price=line[3],
+                name=line[4],
+                carURL=line[5]
+                )
     results = []
     if request.method == "GET":
         query = request.GET.get('search')
