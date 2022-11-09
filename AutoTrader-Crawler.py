@@ -27,7 +27,7 @@ class Autotrader:
                 
     #Export Data to excel file. 
     car_listings = pd.DataFrame(data)
-    car_listings.to_excel('Autotrader.xlsx')
+    car_listings.to_excel('cars/data/Autotrader.xlsx')
         
     
         
