@@ -2,10 +2,11 @@ To run the development server and see the django wepage:
 1. Clone the repository
 2. Open a terminal in the folder at the level where you can see manage.py
 3. Run virtual environment with `.venv\Scripts\activate.bat`
-4. Run `python manage.py runserver`
-5. Open browser and navigate to `http://127.0.0.1:8000/` to view webpage
-6. CNTRL + C to close server
-7. To deactivate virtual environment enter `deacativate` into terminal
+4. `pip install django_import_export`
+5. Run `python manage.py runserver`
+6. Open browser and navigate to `http://127.0.0.1:8000/` to view webpage
+7. CNTRL + C to close server
+8. To deactivate virtual environment enter `deacativate` into terminal
 
 To run Web-Crawler.py:
 1. Open terminal and navigate to Auto-Crawler Directory
