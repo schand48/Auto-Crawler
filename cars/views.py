@@ -1,7 +1,7 @@
 #Author: Sumi
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView, ListView
-from models import Car
+from .models import Car
 from django.db.models import Q
 import csv
 # from car import Car
@@ -31,7 +31,7 @@ def search(request):
                 name=line[1],
                 mileage=line[2],
                 price=line[3],
-                name=line[4],
+                dealer_name=line[4],
                 carURL=line[5]
                 )
     results = []
