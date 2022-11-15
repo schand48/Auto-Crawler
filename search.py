@@ -34,7 +34,7 @@ class Search():
 #testing search class
 if __name__ == "__main__":
     cDatabase = Search()
-    cDatabase.create_csv_database("cars/data/car_listings_page4.csv")
+    cDatabase.create_csv_database("cars/data/car_listings.csv")
    # print(cDatabase)
     keyword = "2022 Mitsubishi Outlander SE"
     searchKeyword = cDatabase.search_keyword(keyword)
