@@ -18,7 +18,7 @@ class Autotrader:
                     #Vehcile Price: 
                     'Vehile Price': result.find('div', {'data-cmp':'pricing'}).get_text() if result.find('div',{'data-cmp':'pricing'}) else None,
                     #Vehicle Mileage:
-                    'Vehicle Mileage':result.find('span', {'class':'text-bold'}).get_text() if result.find('span', {'class':'text-bold'}) else None,
+                    'Vehicle Mileage':result.find('div', {'class':'item-card-specifications col-xs-9 margin-top-4 text-subdued-lighter'}).get_text() if result.find('div', {'class':'item-card-specifications col-xs-9 margin-top-4 text-subdued-lighter'}) else None,
                     #Dealer Name:
                     'Dealer name': result.find('div', {'data-cmp':'ownerDistance'}).get_text() if result.find('div',{'data-cmp':'ownerDistance'}) else None,
                     #Link to dealer:
