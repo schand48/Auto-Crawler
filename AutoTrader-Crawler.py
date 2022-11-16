@@ -15,20 +15,20 @@ class Autotrader:
         for result in results:
             data.append({
                     #Vehcile Name:
-                    'Vehicle Name': result.find('h2').get_text() if result.find('h2') else None,
+                    'name': result.find('h2').get_text() if result.find('h2') else None,
                     #Vehcile Price: 
-                    'Vehile Price': result.find('div', {'data-cmp':'pricing'}).get_text() if result.find('div',{'data-cmp':'pricing'}) else None,
+                    'price': result.find('div', {'data-cmp':'pricing'}).get_text() if result.find('div',{'data-cmp':'pricing'}) else None,
                     #Vehicle Mileage:
-                    'Vehicle Mileage':result.find('div', {'class':'item-card-specifications col-xs-9 margin-top-4 text-subdued-lighter'}).get_text() if result.find('div', {'class':'item-card-specifications col-xs-9 margin-top-4 text-subdued-lighter'}) else None,
+                    'mileage':result.find('div', {'class':'item-card-specifications col-xs-9 margin-top-4 text-subdued-lighter'}).get_text() if result.find('div', {'class':'item-card-specifications col-xs-9 margin-top-4 text-subdued-lighter'}) else None,
                     #Dealer Name:
-                    'Dealer name': result.find('div', {'data-cmp':'ownerDistance'}).get_text() if result.find('div',{'data-cmp':'ownerDistance'}) else None,
+                    'dealer_name': result.find('div', {'data-cmp':'ownerDistance'}).get_text() if result.find('div',{'data-cmp':'ownerDistance'}) else None,
                     #Link to dealer:
-                    'Link to dealer': root_url + result.find('a', {'rel':'nofollow'}).get('href') if result.find('a', {'rel':'nofollow'}) else None
+                    'carURL': root_url + result.find('a', {'rel':'nofollow'}).get('href') if result.find('a', {'rel':'nofollow'}) else None
                 })  
                 
     #Export Data to excel file. 
     car_listings = pd.DataFrame(data)
-    car_listings.to_excel('cars/data/Autotrader.xlsx')
+    #car_listings.to_excel('cars/data/Autotrader.xlsx')
     car_listings.to_csv('cars/data/Autotrader_page1.csv')
         
     
