@@ -20,4 +20,9 @@ To run Web-Crawler.py:
 
 Resources:
 https://www.geeksforgeeks.org/how-to-integrate-mysql-database-with-django/
-
+https://dev.mysql.com/doc/refman/8.0/en/creating-tables.html
+https://docs.djangoproject.com/en/4.1/topics/db/search/
+https://stackoverflow.com/questions/11429827/how-to-import-a-csv-file-into-mysql-workbench
+https://stackoverflow.com/questions/59993844/error-loading-local-data-is-disabled-this-must-be-enabled-on-both-the-client
+https://stackoverflow.com/questions/63361962/error-2068-hy000-load-data-local-infile-file-request-rejected-due-to-restrict
+https://stackoverflow.com/questions/1310166/how-to-import-an-excel-file-in-to-a-mysql-database

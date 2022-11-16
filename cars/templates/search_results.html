@@ -1,7 +1,7 @@
 <!--cars/templates/search_results.html -->
 <head>
 
-  <title> Auto Crawler</title>
+  <title > Auto Crawler </title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -29,7 +29,8 @@
   <ul>
     {% for car in object_list %}
       <li>
-        {{ car.name }}, {{ car.mileage }}, {{ car.price }}, {{ car.dealer_name }}, {{ car.carURL }}, 
+        {{ car.name }}, {{ car.mileage }}
+        <!--{{ car.price }}, {{ car.dealer_name }}, {{ car.carURL }}-->
       </li>
     {% endfor %}
   </ul>

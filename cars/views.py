@@ -1,10 +1,9 @@
 #Author: Sumi
 from django.shortcuts import render, get_object_or_404
+from django.core.exceptions import ObjectDoesNotExist
 from django.views.generic import TemplateView, ListView
-from models import Car
 from django.db.models import Q
-import csv
-# from car import Car
+from .models import Car
 
 # Used for testing
 # Defining function to display all cars
@@ -22,25 +21,32 @@ class SearchResultsView(ListView):
 
 # function for searchbar to search through user query
 def search(request):
-    #load csv data
-    with open("cars/data/car_listings_page4.csv", "r") as csvfile:
-        csvreader = csv.reader(csvfile)
-        for line in csvreader:
-            _, created = Car.objects.get_or_create(
-                number=line[0],
-                name=line[1],
-                mileage=line[2],
-                price=line[3],
-                name=line[4],
-                carURL=line[5]
-                )
-    results = []
-    if request.method == "GET":
-        query = request.GET.get('search')
-        if query == '':
-            query = 'None'
-        results = Car.objects.filter(Q(name__icontains=query))
-    return render(request, 'search.html', {'query': query, 'results': results})
+    try:
+        queryset = Car.objects.filter(name__icontains='Lexus')
+        return render(request, 'search.html', {'car': list(queryset)})
+    except ObjectDoesNotExist:
+        pass
+    
+    
+    # #load csv data
+    # with open("cars/data/car_listings_page4.csv", "r") as csvfile:
+    #     csvreader = csv.reader(csvfile)
+    #     for line in csvreader:
+    #         _, created = Car.objects.get_or_create(
+    #             number=line[0],
+    #             name=line[1],
+    #             mileage=line[2],
+    #             price=line[3],
+    #             name=line[4],
+    #             carURL=line[5]
+    #             )
+    # results = []
+    # if request.method == "GET":
+    #     query = request.GET.get('search')
+    #     if query == '':
+    #         query = 'None'
+    #     results = Car.objects.filter(Q(name__icontains=query))
+    # return render(request, 'search.html', {'query': query, 'results': results})
 
 
 # # # Define function to display the particular car

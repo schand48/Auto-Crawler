@@ -10,9 +10,10 @@ from django.urls import  reverse
 
 # Create model for car
 class Car(models.Model):
+    idnumber = models.FloatField()
     name = models.CharField(max_length=255)
-    mileage = models.FloatField()
     price = models.FloatField()
+    mileage = models.CharField(max_length=255)
     dealer_name = models.CharField(max_length=255)
     carURL = models.CharField(max_length=255)
     
