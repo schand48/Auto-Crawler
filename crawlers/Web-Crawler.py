@@ -1,4 +1,7 @@
-#Author: Luan 
+# Written by: Luan
+# Tested by:
+# Debugged by:
+
 from bs4 import BeautifulSoup   
 import requests 
 import pandas as pd
@@ -33,6 +36,6 @@ class Crawler:
                 
     #Export Data to excel and .csv file and save in /static
     car_listings = pd.DataFrame(data)
-    car_listings.to_excel('cars/data/car_listings_page1.xlsx')
-    car_listings.to_csv('cars/data/car_listings_page1.csv') #Bug: csv formatting issues
+    car_listings.to_excel('cars/data/car_listings_web-crawler.xlsx')
+    car_listings.to_csv('cars/data/car_listings_web-crawler.csv') #Bug: csv formatting issues
     #car_listings.to_json('cars/data/car_listings_page1.json')

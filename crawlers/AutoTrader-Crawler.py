@@ -1,4 +1,7 @@
-#Author: Luan 
+# Written by: Luan
+# Tested by:
+# Debugged by:
+
 from bs4 import BeautifulSoup   
 import requests 
 import pandas as pd   
@@ -30,7 +33,7 @@ class Autotrader:
     #Export Data to excel file. 
     car_listings = pd.DataFrame(data)
     #car_listings.to_excel('cars/data/Autotrader.xlsx')
-    car_listings.to_csv('cars/data/Autotrader_page1.csv')
+    car_listings.to_csv('cars/data/car_listings_autotrader.csv')
         
     
         

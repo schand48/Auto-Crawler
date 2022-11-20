@@ -1,4 +1,7 @@
-#Author: Luan 
+# Written by: Luan
+# Tested by:
+# Debugged by:
+
 from grp import struct_group
 from bs4 import BeautifulSoup   
 import requests 
@@ -60,4 +63,5 @@ for i in range (1,13):
 
 #Using Pandas to create a dictionary and import to Excel
 car_listings = pd.DataFrame({'Name': name, 'Mileage':mileage, 'Price': price, 'Dealer Name':dealer_name,'Link': source})
-car_listings.to_excel('car_listings_page4.xlsx')
+#car_listings.to_excel('car_listings_page4.xlsx')
+car_listings.to_csv('cars/data/car_listings_beautifulsoup2.csv')
