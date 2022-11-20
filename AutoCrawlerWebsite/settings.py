@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'AutoCrawlerWebsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'carlistings',
+        'NAME': 'carlistingsdb',
         'HOST': 'localhost',
         'USER': 'root',
         'PASSWORD': 'Autocrawler',

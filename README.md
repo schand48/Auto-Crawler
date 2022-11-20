@@ -2,11 +2,10 @@ To run the development server and see the django wepage:
 1. Clone the repository
 2. Open a terminal in the folder at the level where you can see manage.py
 3. Run virtual environment with `.venv\Scripts\activate.bat`
-4. 
-5. Run `python manage.py runserver`
-6. Open browser and navigate to `http://127.0.0.1:8000/` to view webpage
-7. CNTRL + C to close server
-8. To deactivate virtual environment enter `deacativate` into terminal
+6. Run `python manage.py runserver`
+7. Open browser and navigate to `http://127.0.0.1:8000/` to view webpage
+8. CNTRL + C to close server
+9. To deactivate virtual environment enter `deacativate` into terminal
 
 To run Web-Crawler.py:
 1. Open terminal and navigate to Auto-Crawler Directory
@@ -16,8 +15,6 @@ To run Web-Crawler.py:
 4. Install openpyxl with `pip install openpyxl`
 5. Run the code, `Web-Crawler.py`, there will be an excel .csv file created in the /cars/data directory 
 
-
-
 Resources:
 https://www.geeksforgeeks.org/how-to-integrate-mysql-database-with-django/
 https://dev.mysql.com/doc/refman/8.0/en/creating-tables.html
@@ -26,3 +23,5 @@ https://stackoverflow.com/questions/11429827/how-to-import-a-csv-file-into-mysql
 https://stackoverflow.com/questions/59993844/error-loading-local-data-is-disabled-this-must-be-enabled-on-both-the-client
 https://stackoverflow.com/questions/63361962/error-2068-hy000-load-data-local-infile-file-request-rejected-due-to-restrict
 https://stackoverflow.com/questions/1310166/how-to-import-an-excel-file-in-to-a-mysql-database
+https://python.plainenglish.io/comparison-of-methods-for-importing-bulk-csv-data-into-mysql-using-python-5890dbf57419
+https://bootsnipp.com/snippets/aMOOD

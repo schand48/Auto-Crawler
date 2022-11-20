@@ -1,9 +1,14 @@
 #Author: Sumi
 from django.shortcuts import render, get_object_or_404
-from django.core.exceptions import ObjectDoesNotExist
+#from django.core.exceptions import ObjectDoesNotExist
 from django.views.generic import TemplateView, ListView
 from django.db.models import Q
+import mysql.connector as msql
+from mysql.connector import Error
 from .models import Car
+import csv
+import pandas as pd
+
 
 # Used for testing
 # Defining function to display all cars
@@ -21,13 +26,63 @@ class SearchResultsView(ListView):
 
 # function for searchbar to search through user query
 def search(request):
+    #try:
+        # queryset = Car.objects.filter(name__icontains='Lexus')
+        # return render(request, 'search.html', {'car': list(queryset)})
+    results = []
+    if request.method == "GET":
+        query = request.GET.get('search')
+        if query == '':
+            query = 'None'
+        results = Car.objects.filter(Q(name__icontains=query))
+    return render(request, 'search.html', {'query': query, 'results': results})
+    # except ObjectDoesNotExist:
+    #     pass\
+
+conn_params_dic = {
+    "host"      : "localhost",
+    "database"  : "carlistings",
+    "user"      : "root",
+    "password"  : "Autocrawler"
+}
+# Define a connect function for MySQL database server
+def connect_database(conn_params_dic):
+    conn = None
     try:
-        queryset = Car.objects.filter(name__icontains='Lexus')
-        return render(request, 'search.html', {'car': list(queryset)})
-    except ObjectDoesNotExist:
-        pass
-    
-    
+        conn = msql.connect(**conn_params_dic)        
+    except Error as err:
+        conn = None  #set the connection to 'None' in case of error
+    return conn
+       
+# Define a connect function to load csv into MySQL database server
+def load_database(engine, datafrm, table_name): 
+        datafrm.to_csv('cars/data/Autotrader_page1.csv', index=False)
+        # dataframe columns with Comma-separated
+        cols = ','.join(list(datafrm.columns))
+        # SQL query to execute
+        sql = "INSERT INTO %s(%s) VALUES(%%s,%%s,%%s,%%s,%%s)" % (table_name, cols)
+        sql = sql.format(table_name)
+        with open('cars/data/Autotrader_page1.csv') as fh:
+            reader = csv.reader(fh)
+            next(reader)  # Skip first line 
+            data = list(reader)
+        engine.execute(sql, data)
+
+    # conn = mysql.connect(host='localhost', database='carlistings', user='root', password='root@Autocrawler')
+    # if conn.is_connected():
+    #     cursor = conn.cursor()
+    #     cursor.execute("select database();")
+    #     record = cursor.fetchone()
+    # for i,row in empdata.iterrows():
+    #     #here %S means string values 
+    #     sql = "INSERT INTO car.cars_car VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+    #     cursor.execute(sql, tuple(row))
+    #     cursor.close()
+    #     # the connection is not auto committed by default, so we must commit to save our changes
+    #     conn.commit()
+
+
+
     # #load csv data
     # with open("cars/data/car_listings_page4.csv", "r") as csvfile:
     #     csvreader = csv.reader(csvfile)
