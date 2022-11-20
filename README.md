@@ -1,7 +1,7 @@
 # File Structure
     Auto-Crawler
     ├── .venv                           # Virtual envirnoment containing necessary python packages
-    ├── AutoCrawlerWebsite
+    ├── AutoCrawlerWebsite              # Django Python package for project
     │   ├── __init__.py                 # Empty Python file telling interpreter that AutoCrawlerWebsite is a Python package
     │   ├── __pycache__
     │   │   ├── __init__.cpython-310.pyc
@@ -23,10 +23,11 @@
     │   │   ├── car.py                  # Testing reading a .csv file
     │   │   ├── import_csv_to_mysql.py  # Testing script to import .csv into mysql
     │   │   └── search.py               # Testing a search class
-    │   ├── admin.py
-    │   ├── apps.py
+    │   ├── admin.py                    # File used to register and display models in Django admin panel
+    │   ├── apps.py                     # Default configuration file for Django apps
+    │   ├── forms.py                    # Contains functions to handle form fields in website
     │   ├── __init__.py                 # Empty Python file telling interpreter that cars is a Python package
-    │   ├── models.py
+    │   ├── models.py                   # Contains Car class and defines database structure
     │   ├── tests.py                    # Test Codes for Django app
     │   └── views.py                    # Connects models and templates togetherr and provides an interface for Django website
     ├── crawlers                        # contains crawler files
@@ -34,7 +35,7 @@
     │   ├── Beautifulsoup2.py           # Ver1 of Crawler; site: cars.com
     │   └── Web-Crawler.py              # Ver2 of Crawler; site: cars.com
     ├── manage.py                       # Command-line utility for Django web app
-    └── README.md                       # **THIS FILE**
+    └── README.md                       # THIS FILE
 
 # How to run the code
 
