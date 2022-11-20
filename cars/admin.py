@@ -1,3 +1,7 @@
+# Written by: Sumi
+# Tested by:
+# Debugged by:
+
 from django.contrib import admin
 from .models import Car
 

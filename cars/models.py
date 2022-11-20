@@ -1,4 +1,7 @@
-#Author: Sumi
+# Written by: Sumi
+# Tested by:
+# Debugged by:
+
 from django.db import models
 from django.urls import  reverse
 

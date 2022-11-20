@@ -1,3 +1,7 @@
+# Written by: Sumi
+# Tested by:
+# Debugged by: 
+
 """
 Django settings for AutoCrawlerWebsite project.
 
@@ -103,6 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+
 ]
 
 

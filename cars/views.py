@@ -1,4 +1,7 @@
-#Author: Sumi
+# Written by: Sumi
+# Tested by:
+# Debugged by:
+
 from django.shortcuts import render, get_object_or_404
 #from django.core.exceptions import ObjectDoesNotExist
 from django.views.generic import TemplateView, ListView

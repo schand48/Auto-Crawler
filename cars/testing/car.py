@@ -1,7 +1,10 @@
-#Author:Sumi
-#car.py
+# Written by: Sumi
+# Tested by:
+# Debugged by:
+
+# car.py
 # Class representing a Car
-#import datetime #not used yet. will use for year and carDate
+# import datetime #not used yet. will use for year and carDate
 
 class Car:
     # Attributes of a Car

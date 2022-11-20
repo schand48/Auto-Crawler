@@ -1,3 +1,7 @@
+# Written by: Sumi
+# Tested by:
+# Debugged by:
+
 """AutoCrawlerWebsite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:

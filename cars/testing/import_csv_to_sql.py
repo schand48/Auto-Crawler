@@ -1,4 +1,8 @@
-#testing script to import .csv into mysql
+# Written by: Sumi
+# Tested by:
+# Debugged by:
+# testing script to import .csv into mysql
+
 import MySQLdb
 import csv
 import sys

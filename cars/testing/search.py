@@ -1,5 +1,8 @@
-#Author: Sumi
-#Used for testing
+# Written by: Sumi
+# Tested by:
+# Debugged by:
+# Used for testing
+
 import csv
 import pandas as pd
 from car import Car
@@ -19,8 +22,8 @@ class Search():
                 car_data = Car()        
                 #car_data.set_car_number(int(line[0]))
                 car_data.set_name(line[1])
-                car_data.set_mileage(line[2])
-                car_data.set_price(line[3])
+                car_data.set_price(line[2])
+                car_data.set_mileage(line[3])
                 car_data.set_dealer_name(line[4])
                 car_data.set_carURL(line[5])
                 self.__car_list.append(car_data)

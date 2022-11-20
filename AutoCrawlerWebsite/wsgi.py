@@ -1,3 +1,5 @@
+# Auto created by Django framework
+
 """
 WSGI config for AutoCrawlerWebsite project.
 

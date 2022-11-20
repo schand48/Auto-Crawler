@@ -1,3 +1,4 @@
+# Auto created by Django framework
 """
 ASGI config for AutoCrawlerWebsite project.
 
