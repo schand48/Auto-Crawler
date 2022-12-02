@@ -83,10 +83,13 @@ WSGI_APPLICATION = 'AutoCrawlerWebsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'carlistingsdb',
+        'NAME': 'CarList',
         'HOST': 'localhost',
         'USER': 'root',
         'PASSWORD': 'Autocrawler',
+        'OPTIONS': {  
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
+        }
     }
 }
 

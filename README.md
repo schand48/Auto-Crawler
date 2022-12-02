@@ -56,6 +56,38 @@
 4. Install openpyxl with `pip install openpyxl`
 5. Run the code, `Web-Crawler.py`, there will be an excel .csv file created in the /cars/data directory 
 
+## Connecting to MySQL Server:
+1. In terminal, enter `pip install mysql`
+2. Go to the bin folder under the base directory of your MySQL installation with `cd mysql/bin`
+3. Open MySQL shell by issueing the following command: `mysql -u root -p`
+    - If you have logged in using a temporary root password that was generated during the installation or initialization process, change your root password by typing the following statement at the prompt: `ALTER USER 'root'@'localhost' IDENTIFIED BY 'Autocrawler';`
+4. Create database using SQL queries with `create database carlistings`
+5. Exit MySQL shell with `quit`
+6. Update the update the database section in settings.py with the correct database configuration
+7. Allow Python project to connect to the MySQL server`pip install mysqlclient`
+8. Create a migration for the 'cars' app that contains the car model that will be used for tables `manage.py makemigrations cars`
+9. Run the migrate command and it will create the exiting tables in Django into the MySQL database `manage.py migrate cars`
+10. A table called 'cars_car' should apear in the 'Carlist' Database
+11. Load csv in database from MySQL shell:
+LOAD DATA LOCAL INFILE 'C:/Users/schand2/Auto-Crawler/cars/data/Autotrader_page1.csv'
+INTO TABLE carlist.cars_car FIELDS TERMINATED BY ','
+ENCLOSED BY '"' LINES TERMINATED BY '\n';
+
+# Errors:
+- ERROR 3948 (42000): Loading local data is disabled; this must be enabled on both the client and server sides
+    1. Check the local_infile is disabled or enable
+            mysql> show global variables like 'local_infile';
+        Set the global variables by using this command:
+            mysql> SET GLOBAL local_infile=1;
+            Query OK, 0 rows affected (0.00 sec)
+    2. Quit current server:
+            mysql> quit
+            Bye
+    3. Connect to the server with local-infile system variable :
+            mysql --local-infile=1 -u root -pAutocrawler carlist
+
+
+
 # Resources
 - https://studygyaan.com/django/best-practice-to-structure-django-project-directories-and-files
 - https://python.plainenglish.io/how-to-structure-your-django-project-a5d50333a644
