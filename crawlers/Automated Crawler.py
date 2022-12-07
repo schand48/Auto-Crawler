@@ -3,7 +3,9 @@ import requests
 import pandas as pd   
 from time import time, sleep 
 from random import randint
-
+#Written By Luan 
+#Tested by Luan and Sumi
+#Unfinished as it puts too much stress on the server
 
 
 class Crawler:

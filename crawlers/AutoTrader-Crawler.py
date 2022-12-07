@@ -1,6 +1,6 @@
 # Written by: Luan
-# Tested by:
-# Debugged by:
+# Tested by: Sumi
+# Debugged by: Luan
 
 from bs4 import BeautifulSoup   
 import requests 

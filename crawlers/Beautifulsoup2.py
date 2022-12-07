@@ -1,6 +1,6 @@
 # Written by: Luan
-# Tested by:
-# Debugged by:
+# Tested by: Sumi
+# Debugged by: Luan
 
 from grp import struct_group
 from bs4 import BeautifulSoup   

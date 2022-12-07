@@ -1,7 +1,11 @@
+#Written by: Luan 
+#tested by: Sumi
+#Debugg by: Luan
 import scrapy 
 import requests 
 import pandas as pd
 import csv
+
 
 class Cars(scrapy.Spider):
     data = []
